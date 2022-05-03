@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     //force that pushed our player forward
     public float forwardForce = 1000f;
     //force that pushed our player sideways
-    public float sidewaysForce = 500f;
+    public float sidewaysForce = 100f;
 
     // Start is called before the first frame update
     void Start()
@@ -27,13 +27,13 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKey("d") )
         {
             //we push our player to the right using the sidewaysForce
-            playerCube.AddForce(sidewaysForce * Time.deltaTime, 0, 0);
+            playerCube.AddForce(sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
 
         if(Input.GetKey("a") )
         {
             //we push our player to the right using the sidewaysForce
-            playerCube.AddForce(-sidewaysForce * Time.deltaTime, 0, 0);
+            playerCube.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
     }
 }
